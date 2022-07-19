@@ -9,7 +9,7 @@ return(
     <div>
         <h1>details</h1>
         <button onClick={()=>{goToPokedex(navigate)}}>pokedex</button>
-        <button onClick={()=>{goToHome(navigate)}}>details</button>
+        <button onClick={()=>{goToHome(navigate)}}>Home</button>
     </div>
 )
 
