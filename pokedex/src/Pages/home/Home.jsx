@@ -4,6 +4,7 @@ import { goToDetails, goToPokedex } from "../../Routes/Coordinator";
 import axios from "axios";
 import styled from "styled-components";
 import fundo from "../../Assets/fundo-pok.png";
+import { Card } from "../../Components/card/Card";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -25,6 +26,8 @@ export const Home = () => {
   //     //     console.log(err.data)
   //     // })
   //  }
+
+  
 
   const poke = () => {
     axios
@@ -63,6 +66,12 @@ export const Home = () => {
         }}
       >
         details</button>
+
+        
+
+        <Card
+        img={img}
+        name={pokemon}/>
      
 
     </div>

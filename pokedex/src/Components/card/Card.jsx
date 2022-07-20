@@ -1,5 +1,5 @@
 import React from "react";
-import {ContainerCard,ContItens,Tipos,ContImg,Botoes,} from './styled'
+import {ContainerCard,ContItens,Tipos,ContImg,Botoes,ImgPoke,Fundo} from './styled'
 
 export const Card = (props) => {
     return (
@@ -19,7 +19,7 @@ export const Card = (props) => {
             <Fundo src={props.fundo} alt="" />
           </ContImg>
         </ContItens>
-S
+
         <Botoes>
           <button>button</button>
           <button>button</button>
