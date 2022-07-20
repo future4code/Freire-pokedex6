@@ -49,21 +49,6 @@ export const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
-      <button
-        onClick={() => {
-          goToPokedex(navigate);
-        }}
-      >
-        pokedex
-      </button>
-      <button
-        onClick={() => {
-          goToDetails(navigate);
-        }}
-      >
-        details</button>
-     
 
     </div>
   );
