@@ -29,7 +29,7 @@ export const Home = () => {
 
   
 
-  const poke = () => {
+  const getPokemonId = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/5/`)
       .then((res) => {
@@ -47,7 +47,7 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    poke();
+    getPokemonId();
   }, []);
 
   return (
