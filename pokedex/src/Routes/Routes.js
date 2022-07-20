@@ -4,8 +4,10 @@ import {Home} from '../../src/Pages/home/Home'
 import {Pokedex} from "../../src/Pages/pokedex/Pokedex"
 import {Details} from '../../src/Pages/details/Details'
 
+
 export const Router = () => {
     return (
+        
         <BrowserRouter>
         <Routes>
             <Route index element={<Home/>}/>
@@ -13,6 +15,7 @@ export const Router = () => {
             <Route path='details' element={<Details/>}/>
         </Routes>
         </BrowserRouter>
+      
     )
 
 }
