@@ -83,7 +83,9 @@ export const Card = (props) => {
           >
             Detalhes
           </Details>
-          <button onClick={()=>{setPokedex([...pokedex ,`${props.name}`])}}>button</button>
+
+          <button onClick={()=>{setPokedex([...pokedex ,`${props.name}`])}}>Capturar</button>
+
         </Botoes>
       </ContainerCard>
     </div>
