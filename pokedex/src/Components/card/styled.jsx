@@ -47,7 +47,6 @@ export const ContainerCard = styled.div`
     }
   }};
 
-
   width: 280px;
   height: 150px;
 
@@ -62,12 +61,12 @@ export const ContainerCard = styled.div`
 `;
 
 export const Details = styled.button`
-    color: white;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid;
-`
+  color: white;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid;
+`;
 
 // export const ContainerCard = styled.div`
 // color: white;
@@ -83,9 +82,7 @@ export const Details = styled.button`
 //   margin: 0;
 // }
 
-
 export const TypeImage = styled.img`
-  
   width: 8px;
   height: 12px;
 `;
@@ -95,7 +92,6 @@ export const TitleType = styled.p`
   margin: 0;
   padding: 2px 12px 5px 2px;
   gap: 3px;
-
   border-radius: 10px;
   width: 50px;
   text-align: center;
@@ -142,7 +138,6 @@ export const TitleType = styled.p`
 `;
 
 export const ContItens = styled.div`
-
   display: flex;
   justify-content: space-around;
 `;
@@ -152,18 +147,16 @@ export const ContImg = styled.div`
 `;
 
 export const Tipos = styled.div`
-gap: 3px;
-display: flex;
-justify-content: space-between;
-margin: 15px;
-
+  gap: 3px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
 
   display: flex;
   justify-content: space-between;
   margin: 10px;
 `;
 export const ImgPoke = styled.img`
-
   position: absolute;
   padding-bottom: 10px;
   width: 170px;
@@ -178,10 +171,4 @@ export const Botoes = styled.div`
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
-  
 `;
-
-
-
-
-

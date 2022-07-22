@@ -9,15 +9,22 @@ import {
   Fundo,
   TitleType,
   Details,
+  
 } from "./styled";
 import fundo from "../../Assets/fundo-pok.png";
 import axios from "axios";
 import { IconType } from "../card/Type";
+import { goToDetails } from "../../Routes/Coordinator";
+import { useNavigate } from "react-router-dom";
 
 export const Card = (props) => {
+  const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   const [img, setImg] = useState();
   const [type, setType] = useState([]);
+  const [pokedex,setPokedex] = useState()
+ 
+  
 
   const getPokemonId = () => {
     axios
@@ -26,8 +33,7 @@ export const Card = (props) => {
         setOrder(res.data.order);
         setImg(res.data.sprites.other.dream_world.front_default);
         setType(res.data.types);
-
-        console.log(res.data.types);
+        console.log(res.data.sprites.versions['generation-v']['black-white'].animated.front_default)
       })
       .catch((err) => {
         console.log(err.data);
@@ -37,7 +43,6 @@ export const Card = (props) => {
   useEffect(() => {
     getPokemonId();
   }, []);
-  console.log(type)
 
   const listTypes =
     type &&
@@ -60,13 +65,19 @@ export const Card = (props) => {
           </div>
 
           <ContImg>
-            <ImgPoke src={img} alt="" />
+            <ImgPoke src={img} alt="immagem pokemon" />
             <Fundo src={fundo} alt="" />
           </ContImg>
         </ContItens>
 
         <Botoes>
-          <Details>Detalhes</Details>
+          <Details
+            onClick={() => {
+              goToDetails(navigate(`details/${props.name}`));
+            }}
+          >
+            Detalhes
+          </Details>
           <button>button</button>
         </Botoes>
       </ContainerCard>
@@ -77,4 +88,4 @@ export const Card = (props) => {
 //  <button  onClick={props.pokedex ? removeFromPokedex : addToPokedex}>
 //        {props.pokedex ? "Remover da Pokédex" : "Adicionar a Pokédex"}
 // </button>
-// <button className="buttons" onClick={goToPokemonDetails}>Detalhar</button> 
+// <button className="buttons" onClick={goToPokemonDetails}>Detalhar</button>

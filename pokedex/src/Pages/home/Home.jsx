@@ -38,6 +38,7 @@ const listPoke = pokemon.map((item)=> {
 
     <Container>
         {listPoke}
+
     </Container>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Card } from "../../Components/card/Card";
 //import {useNavigate} from "react-router-dom"
 //import { Card } from "../../Components/card/Card";
 //import { goToDetails,goToHome} from "../../Routes/Coordinator";
@@ -16,6 +17,9 @@ export const Pokedex = () => {
                 return <Card item={item}/>
             })} */}
             <h1>pokedex</h1>
+            <Card 
+            name="ivysaur"
+        />
          
             {/* <button onClick={()=>{goToDetails(navigate)}}>details</button>
             <button onClick={()=>{goToHome(navigate)}}>home</button> */}

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../Routes/Coordinator";
 // import { Header } from "../../Components/header/Header";
 // import { url_base } from "../../Constants/url_base";
@@ -14,9 +14,14 @@ export const Details = () => {
   const [moves, setMoves] = useState([]);
   const [stats, setStats] = useState([]);
 
+  const pathParams = useParams();
+  const poke= pathParams.poke;
+
+  console.log(poke)
+
   const GetInfo = () => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/15`)
+      .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
 
       .then((res) => {
         // console.log('ACERTOU')
