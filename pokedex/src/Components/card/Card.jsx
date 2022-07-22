@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   ContainerCard,
   ContItens,
@@ -9,25 +9,36 @@ import {
   Fundo,
   TitleType,
   Details,
+  
 } from "./styled";
 import fundo from "../../Assets/fundo-pok.png";
 import axios from "axios";
 import { IconType } from "../card/Type";
+import { goToDetails } from "../../Routes/Coordinator";
+import { useNavigate } from "react-router-dom";
+import {GlobalStateContext} from '../../global/GlobalStateContext'
+import { url_base } from "../../Constants/url_base";
+
 
 export const Card = (props) => {
+
+  
+  const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   const [img, setImg] = useState();
   const [type, setType] = useState([]);
+  const {pokedex,setPokedex}= useContext(GlobalStateContext)
+ 
+  console.log(pokedex)
 
   const getPokemonId = () => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${props.name}/`)
+      .get(`${url_base}${props.name}/`)
       .then((res) => {
         setOrder(res.data.order);
         setImg(res.data.sprites.other.dream_world.front_default);
         setType(res.data.types);
-
-        console.log(res.data.types);
+        console.log(res.data.sprites.versions['generation-v']['black-white'].animated.front_default)
       })
       .catch((err) => {
         console.log(err.data);
@@ -37,13 +48,12 @@ export const Card = (props) => {
   useEffect(() => {
     getPokemonId();
   }, []);
-  console.log(type)
 
   const listTypes =
     type &&
     type.map((item) => {
       return (
-        <TitleType backgroundColor={type[0]?.type?.name}>
+        <TitleType backgroundColor={item.type.name}>
           <IconType img={item.type.name} /> {item.type.name}{" "}
         </TitleType>
       );
@@ -60,14 +70,22 @@ export const Card = (props) => {
           </div>
 
           <ContImg>
-            <ImgPoke src={img} alt="" />
+            <ImgPoke src={img} alt="immagem pokemon" />
             <Fundo src={fundo} alt="" />
           </ContImg>
         </ContItens>
 
         <Botoes>
-          <Details>Detalhes</Details>
-          <button>button</button>
+          <Details
+            onClick={() => {
+              goToDetails(navigate(`details/${props.name}`));
+            }}
+          >
+            Detalhes
+          </Details>
+
+          <button onClick={()=>{setPokedex([...pokedex ,`${props.name}`])}}>Capturar</button>
+
         </Botoes>
       </ContainerCard>
     </div>
@@ -77,4 +95,4 @@ export const Card = (props) => {
 //  <button  onClick={props.pokedex ? removeFromPokedex : addToPokedex}>
 //        {props.pokedex ? "Remover da Pokédex" : "Adicionar a Pokédex"}
 // </button>
-// <button className="buttons" onClick={goToPokemonDetails}>Detalhar</button> 
+// <button className="buttons" onClick={goToPokemonDetails}>Detalhar</button>
