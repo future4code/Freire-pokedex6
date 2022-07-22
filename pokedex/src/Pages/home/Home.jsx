@@ -2,56 +2,40 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToDetails, goToPokedex } from "../../Routes/Coordinator";
 import axios from "axios";
-import styled from "styled-components";
-import fundo from "../../Assets/fundo-pok.png";
+import {Container } from './styled'
+
 import { Card } from "../../Components/card/Card";
 
 export const Home = () => {
   const navigate = useNavigate();
   const [pokemon, setPokemon] = useState([]);
-  const [order, setOrder] = useState([]);
-  const [abilities, setAbilities] = useState([]);
-  const [img, setImg] = useState();
+ 
 
-  console.log(pokemon);
-  console.log(img);
-
-  //  const getPokemon = () => {
-  //     axios.get("https://pokeapi.co/api/v2/pokemon/?limit=20")
-  //     .then((res)=>{
-  //         console.log(res.data.results)
-  //         setPokemon(res.data.results)
-  //     })
-  //     // .cath((err)=>{
-  //     //     console.log(err.data)
-  //     // })
-  //  }
-
-  
-
-  const getPokemonId = () => {
-    axios
-      .get(`https://pokeapi.co/api/v2/pokemon/5/`)
-      .then((res) => {
-        console.log(res.data);
-        console.log(res.data.sprites.other.dream_world.front_default);
-
-        setPokemon(res.data.name);
-        setAbilities(res.data.abilities);
-        setOrder(res.data.order);
-        setImg(res.data.sprites.other.dream_world.front_default);
+   const getPokemon = () => {
+      axios.get("https://pokeapi.co/api/v2/pokemon/")
+      .then((res)=>{
+          console.log(res.data.results)
+          setPokemon(res.data.results)
       })
-      .catch((err) => {
-        console.log(err.data);
-      });
-  };
+      // .cath((err)=>{
+      //     console.log(err.data)
+      // })
+   }
+
 
   useEffect(() => {
-    getPokemonId();
+    getPokemon()
+   
   }, []);
 
+const listPoke = pokemon.map((item)=> {
+      
+    return <Card name={item.name}/>
+})
+
+
   return (
-    <div>
+    <Container>
       <h1>Home</h1>
       <button
         onClick={() => {
@@ -67,14 +51,15 @@ export const Home = () => {
       >
         details</button>
 
-        
+        {listPoke}
 
-        <Card
+        {/* <Card
         img={img}
+        order={order}
         name={pokemon}/>
-     
+      */}
 
-    </div>
+    </Container>
   );
 };
 
