@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../Routes/Coordinator";
 // import { Header } from "../../Components/header/Header";
-import { url_base } from "../../Constants/url_base";
+// import { url_base } from "../../Constants/url_base";
 import axios from "axios";
+import { Container } from "./styled";
 
 export const Details = () => {
   const navigate = useNavigate();
@@ -17,7 +18,8 @@ export const Details = () => {
       .get(`https://pokeapi.co/api/v2/pokemon/15`)
 
       .then((res) => {
-        console.log(res.data);
+        // console.log('ACERTOU')
+        // console.log(res.data);
         // console.log(res.data.types)
         // console.log(res.data.moves.slice(0,5))
         // console.log(res.data.stats);
@@ -28,39 +30,61 @@ export const Details = () => {
       })
 
       .catch((err) => {
-        console.log(err.response.data);
+       console.log(err.response.data);
       });
   };
   useEffect(() => {
     GetInfo();
   }, []);
- 
+
   const listaTypes = types.map((item) => {
-    return <p key={item.type.name}> tipo = {item.type.name}</p>;
+    return <p key={item.type.name}>{item.type.name}</p>;
   });
 
   const listaMoves = moves.map((item) => {
-    return <p key={item.move.name}>moves = {item.move.name}</p>;
+    return <p key={item.move.name}>{item.move.name}</p>;
   });
   const nomeStats = stats.map((item) => {
-    return <p key={item.stat.name}>{item.stat.name}</p>
-  })
+    return <p key={item.stat.name}>{item.stat.name}</p>;
+  });
 
   const listaValorStats = stats.map((item) => {
     return <p key={item.base_stat}>{item.base_stat}</p>;
-
   });
 
- return (
-    <div>
-      <h1>details</h1>
-      <p>{details.id}</p>
-      <p>{details.name}</p>
-      <div>{listaTypes}</div>
-      <div>{listaMoves}</div>
-      <div>{nomeStats}</div>
-      <div>{listaValorStats}</div>
-      
+  return (
+    <Container>
+      <div className="Properties">
+      <container className="TypesContainer"> 
+      <p className="ID">#{details.id}</p>
+      <p className="Name">{details.name}</p>
+      <p className="Types">{listaTypes}</p>
+      </container>
+      <div className="Moves">
+        <p>Moves</p>
+        <p>{listaMoves}</p>
+        </div>
+        <div className="Stats">
+        <p className="StatsTitle">Base Stats</p>
+       <p className="BaseStats"> {nomeStats}</p>
+       <p className="StatsNumber">{listaValorStats}</p>
+       </div>
+      <container className="Image" >
+        <div >
+        <img className="Image1"
+          src={details && details?.sprites?.front_default}
+          alt={details.name}
+        />
+        </div>
+        <div >
+        <img className="Image2"
+          src={details && details?.sprites?.back_default}
+          alt={details.name}
+        />
+        </div>
+      </container>
+      </div>
+      <div className="Buttons">
       <button
         onClick={() => {
           goToPokedex(navigate);
@@ -75,6 +99,7 @@ export const Details = () => {
       >
         Home
       </button>
-    </div>
+      </div>
+    </Container>
   );
 };
