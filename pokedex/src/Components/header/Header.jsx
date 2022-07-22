@@ -58,7 +58,7 @@ export const Header = () =>{
     let urlAtual = (window.location.href).split("/")
     
     let urlAgrupada = ''
-    for(let i = 3; i<urlAtual.length; i++) {
+    for(let i = 2; i<urlAtual.length; i) {
         urlAgrupada = urlAgrupada.concat(urlAtual[i])
     }
 
@@ -70,10 +70,10 @@ export const Header = () =>{
             </div>
         
             <div>
-                {urlAtual.length > 0 && urlAtual[3] === "details" &&
+                {urlAtual.length > 0 && urlAtual[2] === "details" &&
                     <ContainerButton>
                         <Button onclick={() => {goToPokedex(navigate)}}>Pokedex</Button>
-                        <Button onclick={() => {goBack(navigate)}}>Voltar</Button>
+                        <Button onclick={() => {goToHome(navigate)}}>Home</Button>
                     </ContainerButton>
                 }
                 { urlAgrupada.length === 0 && 

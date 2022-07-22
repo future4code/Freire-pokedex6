@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate,useParams } from "react-router-dom";
-import { goToHome, goToPokedex } from "../../Routes/Coordinator";
+//import { goToHome, goToPokedex } from "../../Routes/Coordinator";
 // import { Header } from "../../Components/header/Header";
 // import { url_base } from "../../Constants/url_base";
 import axios from "axios";
@@ -91,22 +91,22 @@ export const Details = () => {
         </div>
       </container>
       </div>
-      <div className="Buttons">
+      {/* <div className="Buttons">
       <button
         onClick={() => {
           goToPokedex(navigate);
         }}
       >
         pokedex
-      </button>
-      <button
+      </button> */}
+      {/* <button
         onClick={() => {
           goToHome(navigate);
         }}
       >
         Home
       </button>
-      </div>
+      </div> */}
     </Container>
   );
 };
