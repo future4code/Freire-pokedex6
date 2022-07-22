@@ -35,6 +35,7 @@ const listPoke = pokemon.map((item)=> {
 
 
   return (
+
     <Container>
       <h1>Home</h1>
       <button
@@ -50,6 +51,9 @@ const listPoke = pokemon.map((item)=> {
         }}
       >
         details</button>
+
+    <div>
+
 
         {listPoke}
 
