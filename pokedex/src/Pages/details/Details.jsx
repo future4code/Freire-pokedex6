@@ -1,3 +1,22 @@
+=
+import React from "react";
+//import {useNavigate} from "react-router-dom"
+//import { goToHome,goToPokedex } from "../../Routes/Coordinator";
+//import { Header } from "../../Components/header/Header"
+
+export const Details = () => {
+    // const navigate = useNavigate()
+return(
+    
+    <div>
+           
+        <h1>details</h1>
+        {/* <button onClick={() => { goToPokedex(navigate); } }>pokedex</button>
+        <button onClick={() => { goToHome(navigate); } }>Home</button> */}
+           
+        </div>
+    
+)
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToHome, goToPokedex } from "../../Routes/Coordinator";
@@ -40,6 +59,7 @@ export const Details = () => {
   const listaTypes = types.map((item) => {
     return <p key={item.type.name}>{item.type.name}</p>;
   });
+
 
   const listaMoves = moves.map((item) => {
     return <p key={item.move.name}>{item.move.name}</p>;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-const ContainerCard = styled.div`
+export const ContainerCard = styled.div`
 color: white;
 margin: 30px auto;
 border-radius: 10px;
@@ -20,16 +20,16 @@ h3 {
 }
 `;
 
-const ContItens = styled.div`
+export const ContItens = styled.div`
 display: flex;
 justify-content: space-around;
 `;
-const ContImg = styled.div`
+export const ContImg = styled.div`
 display: flex;
 flex-direction: column-reverse;
 `;
 
-const Tipos = styled.div`
+export const Tipos = styled.div`
 gap: 3px;
 display: flex;
 justify-content: space-between;
@@ -41,18 +41,18 @@ p {
   width: 50px;
 }
 `;
-const ImgPoke = styled.img`
+export const ImgPoke = styled.img`
 position: absolute;
 padding-bottom: 10px;
 width: 170px;
 height: 150px;
 `;
 
-const Fundo = styled.img`
+export const Fundo = styled.img`
 width: 150px;
 height: 125px;
 `;
-const Botoes = styled.div`
+export const Botoes = styled.div`
 display: flex;
 justify-content: space-around;
 margin-bottom: 10px;
