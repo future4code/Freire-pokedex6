@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   ContainerCard,
   ContItens,
@@ -16,19 +16,24 @@ import axios from "axios";
 import { IconType } from "../card/Type";
 import { goToDetails } from "../../Routes/Coordinator";
 import { useNavigate } from "react-router-dom";
+import {GlobalStateContext} from '../../global/GlobalStateContext'
+import { url_base } from "../../Constants/url_base";
+
 
 export const Card = (props) => {
+
+  
   const navigate = useNavigate();
   const [order, setOrder] = useState([]);
   const [img, setImg] = useState();
   const [type, setType] = useState([]);
-  const [pokedex,setPokedex] = useState()
+  const {pokedex,setPokedex}= useContext(GlobalStateContext)
  
-  
+  console.log(pokedex)
 
   const getPokemonId = () => {
     axios
-      .get(`https://pokeapi.co/api/v2/pokemon/${props.name}/`)
+      .get(`${url_base}${props.name}/`)
       .then((res) => {
         setOrder(res.data.order);
         setImg(res.data.sprites.other.dream_world.front_default);
@@ -48,7 +53,7 @@ export const Card = (props) => {
     type &&
     type.map((item) => {
       return (
-        <TitleType backgroundColor={type[0]?.type?.name}>
+        <TitleType backgroundColor={item.type.name}>
           <IconType img={item.type.name} /> {item.type.name}{" "}
         </TitleType>
       );
@@ -78,7 +83,7 @@ export const Card = (props) => {
           >
             Detalhes
           </Details>
-          <button>button</button>
+          <button onClick={()=>{setPokedex([...pokedex ,`${props.name}`])}}>button</button>
         </Botoes>
       </ContainerCard>
     </div>

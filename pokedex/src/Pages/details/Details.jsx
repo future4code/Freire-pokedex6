@@ -17,7 +17,7 @@ export const Details = () => {
   const pathParams = useParams();
   const poke= pathParams.poke;
 
-  console.log(poke)
+  
 
   const GetInfo = () => {
     axios
