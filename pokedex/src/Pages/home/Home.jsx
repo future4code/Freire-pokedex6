@@ -37,32 +37,7 @@ const listPoke = pokemon.map((item)=> {
   return (
 
     <Container>
-      <h1>Home</h1>
-      <button
-        onClick={() => {
-          goToPokedex(navigate);
-        }}
-      >
-        pokedex
-      </button>
-      <button
-        onClick={() => {
-          goToDetails(navigate);
-        }}
-      >
-        details</button>
-
-    <div>
-
-
         {listPoke}
-
-        {/* <Card
-        img={img}
-        order={order}
-        name={pokemon}/>
-      */}
-
     </Container>
   );
 };

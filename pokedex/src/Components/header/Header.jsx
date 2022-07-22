@@ -37,7 +37,7 @@ const ContainerButton = styled.div`
 `
 const Button = styled.button`
      align-items: center;
-     box-shadow: 5px 5px 5px #eee;
+     box-shadow: 5px 5px 5px #eeeeee;
      width: 100px; 
      margin-left: 10px;
      margin-right: 30px;

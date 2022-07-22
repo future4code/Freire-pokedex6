@@ -69,19 +69,19 @@ export const Details = styled.button`
     border-bottom: 2px solid;
 `
 
-export const ContainerCard = styled.div`
-color: white;
-margin: 30px auto;
-border-radius: 10px;
-display: flex;
-flex-direction: column;
-background-color: blue;
-width: 280px;
-height: 150px;
+// export const ContainerCard = styled.div`
+// color: white;
+// margin: 30px auto;
+// border-radius: 10px;
+// display: flex;
+// flex-direction: column;
+// background-color: blue;
+// width: 280px;
+// height: 150px;
 
-p {
-  margin: 0;
-}
+// p {
+//   margin: 0;
+// }
 
 
 export const TypeImage = styled.img`
