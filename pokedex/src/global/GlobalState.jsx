@@ -16,7 +16,7 @@ const GlobalState = (props) => {
     const getPokemonNames = () => {
         axios.get(`${url_base}/pokemon`)
         .then((response) => {
-            setPokemons(response.data.results)
+            setPokemonNames(response.data.results)
         })
         .catch((error) => {
             console.log(error.message)
