@@ -12,6 +12,7 @@ import {
   ImageBig,
   MovesBack,
   Pokebola,
+  Properties
 } from "./styled";
 import { IconType } from "../../Components/card/Type";
 import { TitleType } from "../../Components/card/styled";
@@ -25,6 +26,8 @@ export const Details = () => {
   const [stats, setStats] = useState([]);
 
   const pathParams = useParams();
+
+
   const GetInfo = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
@@ -68,12 +71,13 @@ export const Details = () => {
   const listaValorStats = stats.map((item) => {
     return <p key={item.base_stat}>{item.base_stat}</p>;
   });
+  
 
   return (
     <Container>
       <h1>Detalhes</h1>
-      <div className="Properties">
-        <PokeImage>
+      <Properties backgroundColor={types[0]?.type?.name}> 
+       <PokeImage>
           <div>
             <img
               src={
@@ -115,7 +119,7 @@ export const Details = () => {
             </div>
           </PokeProperties>
           <PokeMovies>
-           <p>Moves:</p>
+           <h2>Moves:</h2>
             <ul>
             <p>{listaMoves}</p>
             </ul>
@@ -127,7 +131,7 @@ export const Details = () => {
             alt={details.name}
           ></img>
         </ImageBig>
-      </div>
+      </Properties>
     </Container>
   );
 };
