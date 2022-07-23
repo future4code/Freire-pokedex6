@@ -7,6 +7,7 @@ import { useNavigate,useParams } from "react-router-dom";
 import axios from "axios";
 import { Container } from "./styled";
 
+
 export const Details = () => {
   const navigate = useNavigate();
   const [details, setDetails] = useState([]);
@@ -61,6 +62,7 @@ export const Details = () => {
 
   return (
     <Container>
+      
       <div className="Properties">
       <container className="TypesContainer"> 
       <p className="ID">#{details.id}</p>

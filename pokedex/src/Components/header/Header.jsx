@@ -5,29 +5,21 @@ import { goToPokedex, goToHome, goBack} from "../../Routes/Coordinator";
 import styled from "styled-components"
 
 const HeaderContainer = styled.div`
-border: 1px solid red;
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    background-color: Blue;
+     border: 1px solid red;
+     display: flex;
+     padding: 10px;
+     justify-content: space-between;
+     background-color: Blue;
    
 `
 const ImgLogo = styled.img`
-  max-width: 200px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  /* flex-direction: row; */
-  align-items: center;
-
-  /* .imagem {
-    
+     max-width: 200px;
+     width: 100%;
      display: flex;
+     justify-content: center;
+     /* flex-direction: row; */
      align-items: center;
-     
- 
-    } */
-    
+
 `
 const ContainerButton = styled.div`
      display: flex;
@@ -54,14 +46,14 @@ const Button = styled.button`
 
 export const Header = () =>{
     const navigate = useNavigate()
-
+    
     let urlAtual = (window.location.href).split("/")
     
     let urlAgrupada = ''
-    for(let i = 2; i<urlAtual.length; i) {
+    for(let i = 3; i<urlAtual.length; i++) {
         urlAgrupada = urlAgrupada.concat(urlAtual[i])
     }
-
+   
     return(
         
         <HeaderContainer>
@@ -70,10 +62,10 @@ export const Header = () =>{
             </div>
         
             <div>
-                {urlAtual.length > 0 && urlAtual[2] === "details" &&
+                {urlAtual.length > 0 && urlAtual[3] === "details" &&
                     <ContainerButton>
                         <Button onclick={() => {goToPokedex(navigate)}}>Pokedex</Button>
-                        <Button onclick={() => {goToHome(navigate)}}>Home</Button>
+                        <Button onclick={() => {goBack(navigate)}}>Voltar</Button>
                     </ContainerButton>
                 }
                 { urlAgrupada.length === 0 && 
@@ -92,3 +84,4 @@ export const Header = () =>{
         
     )
 }
+
