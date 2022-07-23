@@ -8,7 +8,8 @@ import { Card } from "../../Components/card/Card";
 import { url_base } from "../../Constants/url_base";
 
 export const Home = () => {
-  const navigate = useNavigate();
+  
+  
   const [pokemon, setPokemon] = useState([]);
 
   const getPokemon = () => {

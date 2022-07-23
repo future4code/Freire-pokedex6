@@ -6,6 +6,8 @@ import {GlobalStateContext} from './GlobalStateContext'
 const GlobalState = (props) => {
 
     const [pokedex, setPokedex] = useState([])
+    
+    
 
     return (
         <div>
