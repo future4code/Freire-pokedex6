@@ -15,6 +15,7 @@ export const Details = () => {
   const [stats, setStats] = useState([]);
 
   const pathParams = useParams();
+  console.log(pathParams)
   const poke= pathParams.poke;
 
   

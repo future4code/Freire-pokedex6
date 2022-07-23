@@ -168,7 +168,37 @@ export const Fundo = styled.img`
   height: 120px;
 `;
 export const Botoes = styled.div`
+  
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
+
+  
 `;
+export const BotaoAd = styled.button `
+  border:none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  &:hover{
+    background-color: #00000013;
+    color: white;
+  }
+  
+ `
+
+export const BotaoDel = styled.button`
+  border:none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: 
+#FF6262;
+color: white;
+cursor: pointer;
+&:hover{
+    background-color: #f05050;
+    
+  }
+  
+`
+

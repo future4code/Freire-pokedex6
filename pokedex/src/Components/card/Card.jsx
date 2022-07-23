@@ -9,27 +9,27 @@ import {
   Fundo,
   TitleType,
   Details,
-  
+  BotaoAd,
+  BotaoDel,
 } from "./styled";
 import fundo from "../../Assets/fundo-pok.png";
 import axios from "axios";
 import { IconType } from "../card/Type";
 import { goToDetails } from "../../Routes/Coordinator";
-import { useNavigate } from "react-router-dom";
-import {GlobalStateContext} from '../../global/GlobalStateContext'
+import { useLocation, useNavigate } from "react-router-dom";
+import { GlobalStateContext } from "../../global/GlobalStateContext";
 import { url_base } from "../../Constants/url_base";
-
+import Swal from "sweetalert2";
+import pan from '../../Assets/Pan.gif'
 
 export const Card = (props) => {
-
-  
   const navigate = useNavigate();
+  let location = useLocation();
   const [order, setOrder] = useState([]);
   const [img, setImg] = useState();
   const [type, setType] = useState([]);
-  const {pokedex,setPokedex}= useContext(GlobalStateContext)
- 
-  console.log(pokedex)
+  const { pokedex, setPokedex } = useContext(GlobalStateContext);
+ const [pokeAnimated,setAnimated] = useState([])
 
   const getPokemonId = () => {
     axios
@@ -38,10 +38,11 @@ export const Card = (props) => {
         setOrder(res.data.order);
         setImg(res.data.sprites.other.dream_world.front_default);
         setType(res.data.types);
-        console.log(res.data.sprites.versions['generation-v']['black-white'].animated.front_default)
+        setAnimated(res?.data?.sprites?.versions['generation-v']['black-white']?.animated?.front_default)
+        
       })
       .catch((err) => {
-        console.log(err.data);
+        alert(err.data);
       });
   };
 
@@ -58,6 +59,15 @@ export const Card = (props) => {
         </TitleType>
       );
     });
+
+  const removerPokemon = (pokeName) => {
+    let remove = pokedex.filter((poke) => {
+      return pokeName!== poke;
+    });
+    setPokedex(remove);
+  };
+
+  
 
   return (
     <div>
@@ -84,15 +94,53 @@ export const Card = (props) => {
             Detalhes
           </Details>
 
-          <button onClick={()=>{setPokedex([...pokedex ,`${props.name}`])}}>Capturar</button>
-
+          {location.pathname == "/" ? (
+            <BotaoAd 
+              onClick={() => {Swal.fire({
+                title: 'Gotcha!',
+                text: "O Pokémon foi adicionado a sua Pokédex",
+                width: 600,
+                padding: '3em',
+                color: '#08090a',
+                background: '#fff url(/images/trees.png)',
+                showConfirmButton: false,
+                timer: 1500,
+                
+                backdrop: `
+                  #050515ec
+                  url(${pokeAnimated})
+                  top center
+                  no-repeat
+                  
+                  
+                  
+                  
+                `
+              })
+                setPokedex([...pokedex, props.name]);
+              }}
+            >
+              Capturar
+            </BotaoAd>
+          ) : (
+            <BotaoDel
+              onClick={() => {Swal.fire({
+                title: `${props.name}`,
+                text: 'Deletado com sucesso',
+                imageUrl: `${img}`,
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+               
+              })
+                removerPokemon(props.name);
+              }}
+            >
+              Deletar
+            </BotaoDel>
+          )}
         </Botoes>
       </ContainerCard>
     </div>
   );
 };
-
-//  <button  onClick={props.pokedex ? removeFromPokedex : addToPokedex}>
-//        {props.pokedex ? "Remover da Pokédex" : "Adicionar a Pokédex"}
-// </button>
-// <button className="buttons" onClick={goToPokemonDetails}>Detalhar</button>
