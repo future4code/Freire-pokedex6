@@ -26,6 +26,8 @@ export const Details = () => {
   const [stats, setStats] = useState([]);
 
   const pathParams = useParams();
+
+
   const GetInfo = () => {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
@@ -69,7 +71,7 @@ export const Details = () => {
   const listaValorStats = stats.map((item) => {
     return <p key={item.base_stat}>{item.base_stat}</p>;
   });
-  console.log(types)
+  
 
   return (
     <Container>

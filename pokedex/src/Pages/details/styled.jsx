@@ -29,7 +29,8 @@ export const Container = styled.div`
     flex-direction: column;
       display: block;
       height: 70vh;
-
+      grid-template-columns: 1fr;
+  
 }
 
 @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
