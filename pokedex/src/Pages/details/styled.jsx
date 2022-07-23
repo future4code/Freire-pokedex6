@@ -2,134 +2,149 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  background: #ababab;
+  background: #9c9b9b;
   width: 100vw;
   height: 100vh;
   padding-left: 8px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-
-  .ID {
-    display: flex;
+  
+  h1{
     position: absolute;
-    font-size: 24px;
-    
-  }
-
-  .Name {
-    display: flex;
-    position: absolute;
-    font-size: 48px;
-    
-  }
-
-  .Types{
-    display: flex;
-    position: absolute;
-    margin-top: 8vw;
-    width: 7vw;
-    justify-content: space-between;
+    color: white;
+    font-size: 56px;
   }
 
   .Properties {
     display: flex;
     background-color: #729f92;
     border-radius: 38px;
-    width: 94vw;
-    height: 60vh;
-    margin-top: 30vh;
+    width: 95%;
+    height: 70%;
+    margin-top: 15vh;
     margin-left: 0;
   }
-  .TypesContainer {
-    display: flex;
-    position: absolute;
-    margin-left: 74vh;
-    width: 6vw;
-    justify-content: space-between;
-    flex-direction: column;
-}
-  
+`;
 
-  .Moves {
-    display: flex;
-    position: absolute;
-    width: 20vw;
-    height: 30vh;
-    background-color: white;
-    border-radius: 8px;
-    flex-direction: column;
-    padding-left: 8px;
-    margin-left: 54vw;
-    margin-top: 13%;
+export const MovesBack = styled.div`
+  display: flex;
+  width: 20%;
+  height: 90%;
+  margin-left: 3%;
+  margin-top: 5%;
+  flex-direction: column;
+`;
+export const PokeProperties = styled.div`
+  display: flex;
+  color: white;
+  width: 70%;
+  height: 28%;
+  flex-direction: column;
+  z-index: 2;
+
+  h2 {
+    font-size: 48px;
+    margin-top: 1%;
+    z-index: 2;
   }
 
-  .Stats {
-    display: flex;
-    position: absolute;
-    width: 22vw;
-    height: 58vh;
-    background-color: white;
-    border-radius: 8px;
-    flex-direction: column;
-    padding-left: 8px;
-    margin-left: 26vw;
-    margin-top: 1vh;
-  }
-
-  .BaseStats {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 28%;
-    align-items: flex-end;
-    font-size: 12px;
-    margin-top: 32%
-  }
-  .StatsTitle {
+  h3 {
     font-size: 24px;
-    margin-bottom: 10%;
+    z-index: 2;
   }
 
-  .StatsNumber {
-    display: flex;
-    flex-direction: column;
-    width: 36%;
-    align-items: flex-end;
-    font-size: 12px;
-    
-    
+  p {
+    margin-bottom: 1%;
+    width: 60px;
+    z-index: 2;
   }
 
-  .Buttons {
+  div {
     display: flex;
-    position: absolute;
-    align-items: flex-start;
+    row-gap: 20%;
+    width: 100%;
+    justify-content: space-around;
   }
+`;
+export const PokeMovies = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height: 61%;
+  border-radius: 8px;
+  padding-left: 4px;
+  margin-left: 5%;
+  margin-top: 20%;
+  z-index: 0;
+`;
 
-  .Image{
+export const PokeStats = styled.div`
+  display: flex;
+  padding-left: 2px;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  width: 24%;
+  height: 90%;
+  margin-left: 3%;
+  margin-top: 3%;
+  z-index: 2;
+
+  li {
     display: flex;
-    flex-direction: column;
-    position: absolute;
+    justify-content: space-evenly;
+    width: 60%;
+    font-size: 16px;
+    z-index: 1;
+  }
+`;
+
+export const PokeImage = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 24%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+
+  div {
     margin-left: 2%;
-    margin-top: 2%;
-    height: 56%;
-    justify-content: space-between;
-    
-
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    height: 40%;
   }
 
-  .Image1{
+  img {
     display: flex;
-    width: 20vw;
-    height: 20vh;
-    background: white;
-    border-radius: 8px;
+    width: 50%;
+    height: 50%;
+    margin-top: 50px;
+    margin-left: 36px;
   }
+`;
 
-  .Image2{
-    display: flex;
-    width: 20vw;
-    height: 20vh;
-    background: white;
-    border-radius: 8px;
+export const ImageBig = styled.div`
+  display: flex;
+  position: absolute;
+  margin-left: 71%;
+  width: 250px;
+  height: 150px;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+`;
+
+export const ImageBack = styled.div`
+  display: flex;
+`;
+export const Pokebola = styled.div`
+  position: absolute;
+  margin-left: 35%;
+  width: 100%;
+  margin-top: 3%;
+  img {
+    width: 60%;
+    height: 70%;
+    z-index: -1;
   }
 `;
