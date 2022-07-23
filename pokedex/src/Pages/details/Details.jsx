@@ -1,23 +1,31 @@
-
 import React, { useEffect, useState } from "react";
-import { useNavigate,useParams } from "react-router-dom";
-import { goToHome, goToPokedex } from "../../Routes/Coordinator";
-// import { Header } from "../../Components/header/Header";
-// import { url_base } from "../../Constants/url_base";
+import { useNavigate, useParams } from "react-router-dom";
+// import { goToHome, goToPokedex } from "../../Routes/Coordinator";
+
 import axios from "axios";
-import { Container } from "./styled";
+import {
+  Container,
+  PokeImage,
+  PokeMovies,
+  PokeProperties,
+  PokeStats,
+  ImageBig,
+  MovesBack,
+  Pokebola,
+} from "./styled";
+import { IconType } from "../../Components/card/Type";
+import { TitleType } from "../../Components/card/styled";
+import Image  from "../../Assets/fundo-pok.png"
 
 export const Details = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [details, setDetails] = useState([]);
   const [types, setTypes] = useState([]);
   const [moves, setMoves] = useState([]);
   const [stats, setStats] = useState([]);
 
   const pathParams = useParams();
-  const poke= pathParams.poke;
-
-  
+  const poke = pathParams.poke;
 
   const GetInfo = () => {
     axios
@@ -36,7 +44,7 @@ export const Details = () => {
       })
 
       .catch((err) => {
-       console.log(err.response.data);
+        console.log(err.response.data);
       });
   };
   useEffect(() => {
@@ -44,9 +52,13 @@ export const Details = () => {
   }, []);
 
   const listaTypes = types.map((item) => {
-    return <p key={item.type.name}>{item.type.name}</p>;
+    return (
+      <TitleType backgroundColor={item.type.name}>
+        <IconType img={item.type.name}></IconType>
+        {item.type.name}
+      </TitleType>
+    );
   });
-
 
   const listaMoves = moves.map((item) => {
     return <p key={item.move.name}>{item.move.name}</p>;
@@ -61,51 +73,62 @@ export const Details = () => {
 
   return (
     <Container>
+      <h1>Detalhes</h1>
       <div className="Properties">
-      <container className="TypesContainer"> 
-      <p className="ID">#{details.id}</p>
-      <p className="Name">{details.name}</p>
-      <p className="Types">{listaTypes}</p>
-      </container>
-      <div className="Moves">
-        <p>Moves</p>
-        <p>{listaMoves}</p>
-        </div>
-        <div className="Stats">
-        <p className="StatsTitle">Base Stats</p>
-       <p className="BaseStats"> {nomeStats}</p>
-       <p className="StatsNumber">{listaValorStats}</p>
-       </div>
-      <container className="Image" >
-        <div >
-        <img className="Image1"
-          src={details && details?.sprites?.front_default}
-          alt={details.name}
-        />
-        </div>
-        <div >
-        <img className="Image2"
-          src={details && details?.sprites?.back_default}
-          alt={details.name}
-        />
-        </div>
-      </container>
-      </div>
-      <div className="Buttons">
-      <button
-        onClick={() => {
-          goToPokedex(navigate);
-        }}
-      >
-        pokedex
-      </button>
-      <button
-        onClick={() => {
-          goToHome(navigate);
-        }}
-      >
-        Home
-      </button>
+        <PokeImage>
+          <div>
+            <img
+              src={
+                details &&
+                details?.sprites?.versions["generation-v"]["black-white"]
+                  ?.animated?.front_default
+              }
+              alt={details.name}
+            />
+          </div>
+          <div>
+            <img
+              src={
+                details &&
+                details?.sprites?.versions["generation-v"]["black-white"]
+                  ?.animated?.back_default
+              }
+              alt={details.name}
+            />
+          </div>
+        </PokeImage>
+        <PokeStats>
+          <h2> Base Stats</h2>
+          <li>
+            <p> {nomeStats}</p>
+            <p>{listaValorStats}</p>
+          </li>
+        </PokeStats>
+        <Pokebola>
+          <img src={Image} alt="Pokebola"></img>
+          </Pokebola>
+        <MovesBack>
+          
+          <PokeProperties>
+            <h3>#{details.id}</h3>
+            <h2>{details && details?.name?.toUpperCase()}</h2>
+            <div>
+            {listaTypes}
+            </div>
+          </PokeProperties>
+          <PokeMovies>
+           <p>Moves:</p>
+            <ul>
+            <p>{listaMoves}</p>
+            </ul>
+          </PokeMovies>
+        </MovesBack>
+        <ImageBig>
+          <img
+            src={details && details?.sprites?.other?.dream_world.front_default}
+            alt={details.name}
+          ></img>
+        </ImageBig>
       </div>
     </Container>
   );
