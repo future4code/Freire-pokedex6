@@ -26,7 +26,7 @@ export const Details = () => {
   const [stats, setStats] = useState([]);
 
   const pathParams = useParams();
-
+  const poke = pathParams.poke;
 
   const GetInfo = () => {
     axios
