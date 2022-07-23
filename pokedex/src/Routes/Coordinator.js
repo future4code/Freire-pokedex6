@@ -11,6 +11,4 @@ export const goToPokedex = (navigate) =>{
     navigate("/pokedex")
 }
 
-export const goBack = (navigate) => {
-    navigate(-1)
-}
+
