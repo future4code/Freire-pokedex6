@@ -4,8 +4,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   background: #9c9b9b;
-  width: 100vw;
-  height: 100vh;
+  width: 98vw;
+  height: 80vh;
   padding-left: 8px;
 
   h1 {
@@ -14,92 +14,67 @@ export const Container = styled.div`
     font-size: 56px;
   }
 
-  /* @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
-  @media (max-width: 400px) {
-    height: 71.6vh;
-  }
-  @media (max-width: 340px) {
-    height: 74vh;
-  } */
-
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
-      grid-template-columns: 1fr;
-  
-}
+    height: 70vh;
+    grid-template-columns: 1fr;
+  }
 
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 
 export const Properties = styled.div`
-    display: flex;
-    background-color: ${(props) => {
-      switch (props.backgroundColor) {
-        case "grass":
-          return "#729F92";
-        case "bug":
-          return "#76A866";
-        case "poison":
-          return "#AD61AE";
-        case "flying":
-          return "#6892B0";
-        case "dark":
-          return "#5C5365";
-        case "dragon":
-          return "#0A6CBF";
-        case "electric":
-          return "#F4D23B";
-        case "fairy":
-          return "#EC8FE6";
-        case "fighting":
-          return "#CE4069";
-        case "fire":
-          return "#EAAB7D";
-        case "ghost":
-          return "#5269AC";
-        case "ground":
-          return "#D97745";
-        case "ice":
-          return "#74CEC0";
-        case "normal":
-          return "#BF9762";
-        case "psychic":
-          return "#F67176";
-        case "rock":
-          return "#C7B78B";
-        case "steel":
-          return "#BBBBBB";
-        case "water":
-          return "#71C3FF";
-      }
-    }};
-    border-radius: 38px;
-    width: 95%;
-    height: 70%;
-    margin-top: 15vh;
-    margin-left: 0;
+  display: flex;
+  background-color: ${(props) => {
+    switch (props.backgroundColor) {
+      case "grass":
+        return "#729F92";
+      case "bug":
+        return "#76A866";
+      case "poison":
+        return "#AD61AE";
+      case "flying":
+        return "#6892B0";
+      case "dark":
+        return "#5C5365";
+      case "dragon":
+        return "#0A6CBF";
+      case "electric":
+        return "#F4D23B";
+      case "fairy":
+        return "#EC8FE6";
+      case "fighting":
+        return "#CE4069";
+      case "fire":
+        return "#EAAB7D";
+      case "ghost":
+        return "#5269AC";
+      case "ground":
+        return "#D97745";
+      case "ice":
+        return "#74CEC0";
+      case "normal":
+        return "#BF9762";
+      case "psychic":
+        return "#F67176";
+      case "rock":
+        return "#C7B78B";
+      case "steel":
+        return "#BBBBBB";
+      case "water":
+        return "#71C3FF";
+    }
+  }};
+  border-radius: 38px;
+  width: 95%;
+  height: 70%;
+  margin-top: 15vh;
+  margin-left: 0;
 
-  
-    @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -108,27 +83,16 @@ export const Properties = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
-  
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 
 export const MovesBack = styled.div`
@@ -170,9 +134,6 @@ export const PokeProperties = styled.div`
     width: 100%;
     justify-content: space-around;
   }
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -181,26 +142,16 @@ export const PokeProperties = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 export const PokeMovies = styled.div`
   display: flex;
@@ -209,17 +160,19 @@ export const PokeMovies = styled.div`
   width: 100%;
   height: 61%;
   border-radius: 8px;
-  padding-left: 4px;
+  padding-left: 2px;
   margin-left: 5%;
   margin-top: 20%;
   z-index: 0;
 
-  p{
-    font-style: bold;
+  p p {
+    width: fit-content;
+    background-color:  #9c9b9b6e;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 5px;
   }
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
+
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -228,26 +181,16 @@ export const PokeMovies = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 
 export const PokeStats = styled.div`
@@ -270,9 +213,6 @@ export const PokeStats = styled.div`
     z-index: 1;
   }
 
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -281,26 +221,16 @@ export const PokeStats = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 
 export const PokeImage = styled.div`
@@ -328,9 +258,6 @@ export const PokeImage = styled.div`
     margin-left: 60px;
   }
 
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -339,26 +266,16 @@ export const PokeImage = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 
 export const ImageBig = styled.div`
@@ -370,9 +287,6 @@ export const ImageBig = styled.div`
   flex-direction: column-reverse;
   justify-content: flex-start;
 
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -381,37 +295,21 @@ export const ImageBig = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
-
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
-
-
 
 export const ImageBack = styled.div`
   display: flex;
 
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
   @media (max-width: 400px) {
     height: 71.6vh;
   }
@@ -420,102 +318,25 @@ export const ImageBack = styled.div`
   }
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
     flex-direction: column;
-      display: block;
-      height: 70vh;
+    display: block;
+    height: 70vh;
+  }
 
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
+  @media screen and (min-device-width: 481px) and (max-device-width: 800px) {
+    flex-direction: column;
+    display: block;
+    height: 70vh;
+  }
 `;
 export const Pokebola = styled.div`
   position: absolute;
-  margin-left: 35%;
-  width: 100%;
-  margin-top: 3%;
+  margin-left: 42%;
+  width: 51%;
+  margin-top: 2%;
   img {
-    width: 60%;
-    height: 70%;
+    width: 96%;
     z-index: -1;
   }
-
-  @media (max-width: 1280px) {
-    height: 74.3vh;
-  }
-  @media (max-width: 400px) {
-    height: 71.6vh;
-  }
-  @media (max-width: 340px) {
-    height: 74vh;
-  }
-
-  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-    flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
-
-@media (max-width: 1280px) {
-    height: 74.3vh;
-  }
-  @media (max-width: 400px) {
-    height: 71.6vh;
-  }
-  @media (max-width: 340px) {
-    height: 74vh;
-  }
-
-  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-    flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 481px) and (max-device-width: 800px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-
-}
-
-@media screen and (min-device-width: 801px) and (max-device-width: 1280px) {
-  flex-direction: column;
-      display: block;
-      height: 70vh;
-  
-}
-
-
 
 `;

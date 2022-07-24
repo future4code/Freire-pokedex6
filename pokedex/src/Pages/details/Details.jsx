@@ -67,11 +67,13 @@ export const Details = () => {
   const nomeStats = stats.map((item) => {
     return <p key={item.stat.name}>{item.stat.name}</p>;
   });
-
+  let valorTotal = 0
   const listaValorStats = stats.map((item) => {
+    valorTotal+=item.base_stat;
+    
     return <p key={item.base_stat}>{item.base_stat}</p>;
   });
-  
+ 
 
   return (
     <Container>
@@ -102,8 +104,14 @@ export const Details = () => {
         <PokeStats>
           <h2> Base Stats</h2>
           <li>
-            <p> {nomeStats}</p>
-            <p>{listaValorStats}</p>
+            <p>
+               {nomeStats}
+               <p>Total</p>
+            </p>
+            <p>
+              {listaValorStats}
+              <p>{valorTotal}</p>
+            </p>
           </li>
         </PokeStats>
         <Pokebola>
