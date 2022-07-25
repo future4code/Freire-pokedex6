@@ -1,13 +1,11 @@
-/* eslint-disable default-case */
 import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
   background: #9c9b9b;
-  width: 97vw;
-  height: 80vh;
+  width: 95vw;
+  height: 90vh;
   padding-left: 8px;
 
   h1 {
@@ -19,7 +17,7 @@ export const Container = styled.div`
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     grid-template-columns: 1fr;
     width: 97vw;
-    height:200vh;
+    height: 200vh;
   }
 
   h1 {
@@ -74,7 +72,7 @@ export const Properties = styled.div`
   }};
   border-radius: 38px;
   width: 95vw;
-  height: 65vh;
+  height: 70vh;
   margin-top: 10vh;
   margin-left: 0;
 
@@ -90,9 +88,9 @@ export const Properties = styled.div`
 export const MovesBack = styled.div`
   display: flex;
   width: 200px;
-  height: 600px;
+  height: 524px;
   margin-left: 10px;
-  margin-top: 104px;
+  margin-top: 100px;
   flex-direction: column;
 `;
 export const PokeProperties = styled.div`
@@ -129,16 +127,14 @@ export const PokeProperties = styled.div`
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 280px;
-    margin-left: 0px;
     flex-direction: column;
     margin-top: 2px;
-    margin-left:2px;
-    
+    margin-left: 2px;
 
     h2 {
-    display: flex;
-    margin-top: 26px;
-    font-size: 40px;
+      display: flex;
+      margin-top: 26px;
+      font-size: 40px;
     }
   }
 `;
@@ -167,10 +163,9 @@ export const PokeMovies = styled.div`
     margin-top: 12px;
     flex-direction: column;
     ul {
-    margin-top: 1px;
+      margin-top: 1px;
+    }
   }
-}
-
 `;
 
 export const PokeStats = styled.div`
@@ -193,17 +188,16 @@ export const PokeStats = styled.div`
     z-index: 1;
   }
 
-    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 280px;
     height: 450px;
     margin-left: 26px;
     margin-top: 8px;
     flex-direction: column;
-    
-    li {
-    margin-top: 1px;
-  }
 
+    li {
+      margin-top: 1px;
+    }
   }
 `;
 
@@ -249,7 +243,6 @@ export const PokeImage = styled.div`
     div {
       width: 100px;
       height: 100px;
-      
     }
   }
 `;
@@ -273,7 +266,6 @@ export const ImageBig = styled.div`
     margin-left: 100px;
     margin-top: 0px;
     justify-content: flex-end;
-    
   }
 `;
 
@@ -292,13 +284,12 @@ export const Pokebola = styled.div`
 
   @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     position: absolute;
-  margin-left: 50px;
-  width: 275px;
-  margin-top: 38px;
-  img {
-    width: 220px;
-    z-index: -1;
-  }
-
+    margin-left: 50px;
+    width: 275px;
+    margin-top: 38px;
+    img {
+      width: 220px;
+      z-index: -1;
+    }
   }
 `;
