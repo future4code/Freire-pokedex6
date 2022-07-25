@@ -38,6 +38,8 @@ pokedex-smoothye-cloth.surge.sh
 
 ![image](https://user-images.githubusercontent.com/104652478/180671854-fcf7bd40-09e8-4d6d-8749-ab42f903b134.png)
 ![image](https://user-images.githubusercontent.com/104652478/180671876-c5c2328c-6de0-4c17-9ff5-c565ea635e5c.png)
-![image](https://user-images.githubusercontent.com/104652478/180671895-6edd72ea-a498-4dff-b178-958e8321fb6e.png)
+![image](https://user-images.githubusercontent.com/104652478/180678066-6f442bca-4066-4cac-863c-6b444e69a11b.png)
+![image](https://user-images.githubusercontent.com/104652478/180677945-a2b43833-d641-40d9-8403-38d73886886a.png)
+
 
 
