@@ -1,4 +1,4 @@
-#   ![image](https://user-images.githubusercontent.com/104652478/180672492-7650523e-c385-4e2a-ac5d-dad08b7727e4.png)  POKEDEX
+#  ![image](https://user-images.githubusercontent.com/104652478/180672629-c92e4563-9c09-44ba-a05b-fb4fddc30f53.png)  POKEDEX
  
 Descrição do Projeto
 
