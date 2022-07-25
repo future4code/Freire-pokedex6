@@ -32,7 +32,7 @@ Nome dos integrantes:
 - André Bon Balsemão
 - Igor Rodrigues
 
-Link do Surge: pokedex-smooth-cloth.surge.sh
+Link do Surge: pokedex-smoothye-cloth.surge.sh
 
 Prints do Site
 
