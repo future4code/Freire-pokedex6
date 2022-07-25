@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-// import { goToHome, goToPokedex } from "../../Routes/Coordinator";
-
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import {
   Container,
@@ -12,14 +10,17 @@ import {
   ImageBig,
   MovesBack,
   Pokebola,
-  Properties
+  Properties,
 } from "./styled";
 import { IconType } from "../../Components/card/Type";
 import { TitleType } from "../../Components/card/styled";
-import Image  from "../../Assets/fundo-pok.png"
+import Image from "../../Assets/fundo-pok.png";
 
 export const Details = () => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0daedfce1d2e211da3cc01875058d1940187bee7
   const [details, setDetails] = useState([]);
   const [types, setTypes] = useState([]);
   const [moves, setMoves] = useState([]);
@@ -33,7 +34,10 @@ export const Details = () => {
       .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
 
       .then((res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0daedfce1d2e211da3cc01875058d1940187bee7
         setDetails(res.data);
         setTypes(res.data.types);
         setMoves(res.data.moves.slice(0, 5));
@@ -63,19 +67,18 @@ export const Details = () => {
   const nomeStats = stats.map((item) => {
     return <p key={item.stat.name}>{item.stat.name}</p>;
   });
-  let valorTotal = 0
+  let valorTotal = 0;
   const listaValorStats = stats.map((item) => {
-    valorTotal+=item.base_stat;
-    
+    valorTotal += item.base_stat;
+
     return <p key={item.base_stat}>{item.base_stat}</p>;
   });
- 
 
   return (
     <Container>
       <h1>Detalhes</h1>
-      <Properties backgroundColor={types[0]?.type?.name}> 
-       <PokeImage>
+      <Properties backgroundColor={types[0]?.type?.name}>
+        <PokeImage>
           <div>
             <img
               src={
@@ -101,8 +104,8 @@ export const Details = () => {
           <h2> Base Stats</h2>
           <li>
             <p>
-               {nomeStats}
-               <p>Total</p>
+              {nomeStats}
+              <p>Total</p>
             </p>
             <p>
               {listaValorStats}
@@ -112,20 +115,17 @@ export const Details = () => {
         </PokeStats>
         <Pokebola>
           <img src={Image} alt="Pokebola"></img>
-          </Pokebola>
+        </Pokebola>
         <MovesBack>
-          
           <PokeProperties>
             <h3>#{details.id}</h3>
             <h2>{details && details?.name?.toUpperCase()}</h2>
-            <div>
-            {listaTypes}
-            </div>
+            <div>{listaTypes}</div>
           </PokeProperties>
           <PokeMovies>
-           <h2>Moves:</h2>
+            <h2>Moves:</h2>
             <ul>
-            <p>{listaMoves}</p>
+              <p>{listaMoves}</p>
             </ul>
           </PokeMovies>
         </MovesBack>
