@@ -4,8 +4,7 @@ import Logo from "../../Assets/logo.png.png";
 import { goToPokedex, goToHome} from "../../Routes/Coordinator";
 import { useLocation } from "react-router-dom";
 import { ImgLogo,HeaderContainer,TodosPok ,Pokedex,Deletar} from "./styled"
-import { GlobalStateContext } from "../../global/GlobalStateContext";
-import { useContext } from "react";
+
 
 
 
@@ -13,9 +12,11 @@ export const Header = () => {
 
   const navigate = useNavigate();
   let location = useLocation();
-  console.log(location.pathname);
-  const { pokedex, setPokedex } = useContext(GlobalStateContext);
+ 
+ 
   
+
+
 
 
 
@@ -52,19 +53,7 @@ export const Header = () => {
                 <div className="b"></div>
             )}
           </div>
-          <div>
-            {location.pathname === "/" || location.pathname === "/pokedex" ? (
-            ''
-            ) : (
-              <Deletar
-                onClick={() => {
-                 
-                }}
-              >
-                Excluir da pokedex
-              </Deletar>
-            )}
-          </div>
+         
     
     </HeaderContainer>
   );

@@ -19,7 +19,7 @@ import { TitleType } from "../../Components/card/styled";
 import Image  from "../../Assets/fundo-pok.png"
 
 export const Details = () => {
-  // const navigate = useNavigate();
+
   const [details, setDetails] = useState([]);
   const [types, setTypes] = useState([]);
   const [moves, setMoves] = useState([]);
@@ -33,11 +33,7 @@ export const Details = () => {
       .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
 
       .then((res) => {
-        // console.log('ACERTOU')
-        // console.log(res.data);
-        // console.log(res.data.types)
-        // console.log(res.data.moves.slice(0,5))
-        // console.log(res.data.stats);
+
         setDetails(res.data);
         setTypes(res.data.types);
         setMoves(res.data.moves.slice(0, 5));

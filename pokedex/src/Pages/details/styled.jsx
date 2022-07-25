@@ -10,6 +10,8 @@ export const Container = styled.div`
   height: 80vh;
   padding-left: 8px;
 
+
+
   h1 {
     position: absolute;
     color: white;
