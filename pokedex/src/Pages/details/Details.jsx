@@ -17,10 +17,6 @@ import { TitleType } from "../../Components/card/styled";
 import Image from "../../Assets/fundo-pok.png";
 
 export const Details = () => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 0daedfce1d2e211da3cc01875058d1940187bee7
   const [details, setDetails] = useState([]);
   const [types, setTypes] = useState([]);
   const [moves, setMoves] = useState([]);
@@ -34,10 +30,6 @@ export const Details = () => {
       .get(`https://pokeapi.co/api/v2/pokemon/${poke}/`)
 
       .then((res) => {
-<<<<<<< HEAD
-
-=======
->>>>>>> 0daedfce1d2e211da3cc01875058d1940187bee7
         setDetails(res.data);
         setTypes(res.data.types);
         setMoves(res.data.moves.slice(0, 5));
